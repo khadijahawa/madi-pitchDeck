@@ -1,133 +1,133 @@
 import React, { useState } from "react";
 import {
-  StyleSheet,
   Text,
   View,
   Image,
   TouchableOpacity,
   Modal,
+  ScrollView,
+  SafeAreaView,
 } from "react-native";
 import styles from "./Styles";
+import { useFonts } from "expo-font";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [loaded] = useFonts({
+    LexendBold: require("../../assets/fonts/Lexend-Bold.ttf"),
+    LexendRegular: require("../../assets/fonts/Lexend-Regular.ttf"),
+    LexendLight: require("../../assets/fonts/Lexend-Light.ttf"),
+    SoraBold: require("../../assets/fonts/Sora-Bold.ttf"),
+    SoraLight: require("../../assets/fonts/Sora-Light.ttf"),
+  });
+
+  if (!loaded) {
+    return null;
+  }
 
   function handleClick() {
     setModalVisible(true);
   }
   return (
-    <View style={styles.container}>
-      <View style={styles.logo}>
-        <Image source={require("../../assets/logo.png")} />
-      </View>
-      <View style={styles.infoText}>
-        <Text style={styles.digitalIdText}>
-          This is your digital ID: 12435433
-        </Text>
-      </View>
-      <View>
-        <Image
-          source={require("../../assets/Home.png")}
-          style={styles.homeImage}
-        />
-      </View>
-      <View style={styles.infoText}>
-        <View style={styles.info}>
-          <Text style={styles.Text}>This product is authenticated</Text>
-
-          <TouchableOpacity onPress={handleClick}>
+    <SafeAreaView>
+      <ScrollView>
+        <View style={styles.container}>
+          <View style={styles.logo}>
+            <Image source={require("../../assets/logo.png")} />
+          </View>
+          <View style={styles.infoText}>
+            <Text style={styles.digitalIdText}>
+              This is your digital ID: 12435433
+            </Text>
+          </View>
+          <View>
             <Image
-              source={require("../../assets/info.svg")}
-              style={{ backgroundColor: "red" }}
+              source={require("../../assets/Home.png")}
+              style={styles.homeImage}
             />
-          </TouchableOpacity>
-          <Modal
-            animationType="slide"
-            transparent={true}
-            visible={modalVisible}
-          >
-            <View
-              style={[
-                styles.modalContent,
-                { position: "absolute", top: "56%", left: "40%" },
-              ]}
-            >
-              <TouchableOpacity
-                onPress={() => {
-                  setModalVisible(!modalVisible);
-                }}
-              >
+          </View>
+          <View style={styles.infoText}>
+            <View style={styles.info}>
+              <Text style={[styles.Text, { fontFamily: "SoraLight" }]}>
+                This product is authenticated
+              </Text>
+
+              <TouchableOpacity onPress={handleClick}>
                 <Image
-                  source={require("../../assets/cancel.svg")}
-                  style={{
-                    fill: "white",
-                    color: "white",
-                    backgroundColor: "white",
-                  }}
+                  source={require("../../assets/info.svg")}
+                  // style={{ backgroundColor: "red" }}
                 />
-                <Text style={styles.textModal}>
-                  This product is authenticated by MĀDI.
-                </Text>
+              </TouchableOpacity>
+              <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+              >
+                <View
+                  style={[
+                    styles.modalContent,
+                    { position: "absolute", top: "39%", left: "40%" },
+                  ]}
+                >
+                  <TouchableOpacity
+                    onPress={() => {
+                      setModalVisible(!modalVisible);
+                    }}
+                  >
+                    <Image
+                      source={require("../../assets/cancel.svg")}
+                      style={{
+                        fill: "white",
+                        color: "white",
+                        backgroundColor: "white",
+                      }}
+                    />
+                    <Text style={styles.textModal}>
+                      This product is authenticated by MĀDI.
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              </Modal>
+            </View>
+            <Text style={[styles.customText, { fontFamily: "LexendBold" }]}>
+              Light Beige Turtleneck Sweater
+            </Text>
+            <Text style={[styles.Text, { fontFamily: "LexendRegular" }]}>
+              250 €
+            </Text>
+            <View style={styles.lineStyle} />
+            <View style={styles.HomeButtonSection}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("OriginStory")}
+                style={styles.HomeButton}
+              >
+                <Text style={styles.HomeButtonText}>Origin Story</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Care")}
+                style={styles.HomeButton}
+              >
+                <Text style={styles.HomeButtonText}>Care</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Repair")}
+                style={styles.HomeButton}
+              >
+                <Text style={styles.HomeButtonText}>Repair</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Resale")}
+                style={styles.HomeButton}
+              >
+                <Text style={styles.HomeButtonText}>Resale</Text>
               </TouchableOpacity>
             </View>
-          </Modal>
+          </View>
         </View>
-        <Text style={styles.customText}>Light Beige Turtleneck Sweater </Text>
-      </View>
-    </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
 export default Home;
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#ffff",
-//     // alignItems: "center",
-//     paddingTop: 2,
-//   },
-//   infoText: {
-//     alignItems: "center",
-
-//     padding: 3,
-//     margin: 3,
-//   },
-//   info: {
-//     flexDirection: "row",
-//     alignItems: "center",
-//   },
-//   logo: {
-//     alignItems: "center",
-//     margin: 3,
-//   },
-//   Text: {
-//     color: "#717171",
-//     fontSize: 12,
-//     marginRight: 3,
-//   },
-//   digitalIdText: {
-//     color: "#717171",
-//   },
-//   homeImage: {
-//     width: "100%",
-//   },
-//   customText: {
-//     color: "#151513",
-//     fontFamily: "Lexend",
-//   },
-//   modalContent: {
-//     backgroundColor: "#545454",
-//     padding: 22,
-//     justifyContent: "center",
-//     alignItems: "flex-start",
-//     borderRadius: 10,
-//     width: "58%",
-//     height: "15%",
-//   },
-//   textModal: {
-//     color: "#FFFFFF",
-//     margin: 3,
-//     padding: 6,
-//   },
-// });
