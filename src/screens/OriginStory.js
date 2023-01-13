@@ -30,22 +30,21 @@ const OriginStory = ({ navigation }) => {
 
   return (
     <SafeAreaView>
-      <ScrollView>
-        <View
-          style={[
-            styles.container,
-            {
-              // paddingVertical: "4%"
-              justifyContent: "flex-end"
-            }
-          ]}
-        >
-          <View style={styles.info}>
+      <ScrollView contentContainerStyle={{}}>
+        <View style={styles.container}>
+          <View
+            style={[
+              styles.info,
+              {
+                justifyContent: "space-around",
+                right: "5%",
+                // marginLeft: 1
+                paddingTop: 22
+              }
+            ]}
+          >
             <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-              <Image
-                source={require("../../assets/pics/cancelScreen.png")}
-                style={{ margin: 3, alignSelf: "auto" }}
-              />
+              <Image source={require("../../assets/pics/cancelScreen.png")} />
             </TouchableOpacity>
 
             <Text
@@ -55,7 +54,8 @@ const OriginStory = ({ navigation }) => {
                   fontFamily: "LexendSemiBold",
                   fontSize: 22,
                   alignSelf: "center",
-                  lineHeight: 105
+                  lineHeight: 80
+                  // marginRight: 12
                 }
               ]}
             >
@@ -71,7 +71,9 @@ const OriginStory = ({ navigation }) => {
             style={[
               styles.container,
               {
-                padding: 14
+                paddingHorizontal: 14,
+                // marginBottom: 6
+                justifyContent: "center"
               }
             ]}
           >
@@ -170,9 +172,15 @@ const OriginStory = ({ navigation }) => {
                   }
                 ]}
               >
-                Responsibly dyed, certified by REACH.{" "}
+                Responsibly dyed, certified by REACH.
               </Text>
             </View>
+            <Text>
+              {"\n"}
+              {"\n"}
+              {"\n"}
+              {"\n"}
+            </Text>
           </View>
         </View>
       </ScrollView>

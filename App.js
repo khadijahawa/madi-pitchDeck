@@ -15,33 +15,48 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
           component={Home}
           options={{
-            title: "Home",
+            // title: "Home",
             // headerStyle: {
             //   justifyContent: "center",
             //   alignItems: "center",
-            //   alignSelf: "center",
+            //   alignSelf: "center"
             // },
-            // // headerTintColor: "#fff",
+            // headerTintColor: "#fff",
             // headerTitleStyle: {
             //   fontWeight: "bold",
             //   alignSelf: "center",
-
             //   justifyContent: "center",
-            //   alignItems: "center",
+            //   alignItems: "center"
             // },
+            headerShown: false
           }}
         />
-        <Stack.Screen name="Care" component={Care} />
-        <Stack.Screen name="Repair" component={Repair} />
-        <Stack.Screen name="Resale" component={Resale} />
-        <Stack.Screen name="Origin Story" component={OriginStory} />
+        <Stack.Screen
+          name="Care"
+          component={Care}
+          // options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Repair"
+          component={Repair}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Resale"
+          component={Resale}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Origin Story"
+          component={OriginStory}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -52,6 +67,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ffff",
     alignItems: "center",
-    justifyContent: "center",
-  },
+    justifyContent: "center"
+  }
 });

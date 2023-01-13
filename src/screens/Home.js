@@ -35,7 +35,7 @@ const Home = ({ navigation }) => {
           style={[
             styles.container,
             {
-              paddingTop: 6,
+              paddingTop: 22,
               padding: 14,
               paddingVertical: 32
             }

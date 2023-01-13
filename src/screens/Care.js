@@ -33,19 +33,36 @@ const Care = ({ navigation }) => {
             { paddingTop: 6, padding: 14, paddingVertical: "100%" }
           ]}
         >
-          <Text
+          <View
             style={[
-              styles.customText,
+              styles.info,
               {
-                fontFamily: "LexendBold",
-                fontSize: 22,
-                alignSelf: "center",
-                marginVertical: 8
+                justifyContent: "space-around",
+                right: "5%",
+                // marginLeft: 1
+                paddingTop: 22
               }
             ]}
           >
-            Care
-          </Text>
+            <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+              <Image source={require("../../assets/pics/cancelScreen.png")} />
+            </TouchableOpacity>
+
+            <Text
+              style={[
+                styles.customText,
+                {
+                  fontFamily: "LexendSemiBold",
+                  fontSize: 22,
+                  alignSelf: "center",
+                  lineHeight: 80
+                  // marginRight: 12
+                }
+              ]}
+            >
+              Care{" "}
+            </Text>
+          </View>
 
           <View
             style={[
