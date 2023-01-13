@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   Modal,
   ScrollView,
-  SafeAreaView,
+  SafeAreaView
 } from "react-native";
 import styles from "./Styles";
 import { useFonts } from "expo-font";
@@ -18,7 +18,7 @@ const Home = ({ navigation }) => {
     LexendRegular: require("../../assets/fonts/Lexend-Regular.ttf"),
     LexendLight: require("../../assets/fonts/Lexend-Light.ttf"),
     SoraBold: require("../../assets/fonts/Sora-Bold.ttf"),
-    SoraLight: require("../../assets/fonts/Sora-Light.ttf"),
+    SoraLight: require("../../assets/fonts/Sora-Light.ttf")
   });
 
   if (!loaded) {
@@ -31,9 +31,18 @@ const Home = ({ navigation }) => {
   return (
     <SafeAreaView>
       <ScrollView>
-        <View style={styles.container}>
+        <View
+          style={[
+            styles.container,
+            {
+              paddingTop: 6,
+              padding: 14,
+              paddingVertical: 32
+            }
+          ]}
+        >
           <View style={styles.logo}>
-            <Image source={require("../../assets/logo.png")} />
+            <Image source={require("../../assets/pics/logo.png")} />
           </View>
           <View style={styles.infoText}>
             <Text style={styles.digitalIdText}>
@@ -42,8 +51,8 @@ const Home = ({ navigation }) => {
           </View>
           <View>
             <Image
-              source={require("../../assets/Home.png")}
-              style={styles.homeImage}
+              source={require("../../assets/pics/Home.png")}
+              style={styles.Image}
             />
           </View>
           <View style={styles.infoText}>
@@ -53,20 +62,17 @@ const Home = ({ navigation }) => {
               </Text>
 
               <TouchableOpacity onPress={handleClick}>
-                <Image
-                  source={require("../../assets/info.svg")}
-                  // style={{ backgroundColor: "red" }}
-                />
+                <Image source={require("../../assets/pics/info.png")} />
               </TouchableOpacity>
               <Modal
-                animationType="slide"
+                animationType="fade"
                 transparent={true}
                 visible={modalVisible}
               >
                 <View
                   style={[
                     styles.modalContent,
-                    { position: "absolute", top: "39%", left: "40%" },
+                    { position: "absolute", top: "39%", left: "40%" }
                   ]}
                 >
                   <TouchableOpacity
@@ -74,14 +80,7 @@ const Home = ({ navigation }) => {
                       setModalVisible(!modalVisible);
                     }}
                   >
-                    <Image
-                      source={require("../../assets/cancel.svg")}
-                      style={{
-                        fill: "white",
-                        color: "white",
-                        backgroundColor: "white",
-                      }}
-                    />
+                    <Image source={require("../../assets/pics/cancel.png")} />
                     <Text style={styles.textModal}>
                       This product is authenticated by MĀDI.
                     </Text>
@@ -98,7 +97,7 @@ const Home = ({ navigation }) => {
             <View style={styles.lineStyle} />
             <View style={styles.HomeButtonSection}>
               <TouchableOpacity
-                onPress={() => navigation.navigate("OriginStory")}
+                onPress={() => navigation.navigate("Origin Story")}
                 style={styles.HomeButton}
               >
                 <Text style={styles.HomeButtonText}>Origin Story</Text>

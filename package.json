@@ -9,7 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@expo/ngrok": "^2.5.0",
+    "@expo/ngrok": "^4.1.0",
     "@react-navigation/native": "^6.1.2",
     "@react-navigation/native-stack": "^6.9.8",
     "antd-mobile": "^5.27.0",
