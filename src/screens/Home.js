@@ -72,7 +72,7 @@ const Home = ({ navigation }) => {
                 <View
                   style={[
                     styles.modalContent,
-                    { position: "absolute", top: "39%", left: "40%" }
+                    { position: "absolute", top: "48%", left: "40%" }
                   ]}
                 >
                   <TouchableOpacity

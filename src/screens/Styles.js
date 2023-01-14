@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 // import fonts from "../utilities/Fonts";
 
 const styles = StyleSheet.create({
@@ -9,6 +9,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffff"
     // paddingTop: 6,
     // marginHorizontal: 6,
+    // height: "100%",
+    // width: "100%"
   },
   infoText: {
     alignItems: "center",
@@ -81,7 +83,28 @@ const styles = StyleSheet.create({
   HomeButtonText: {
     color: "#151513"
   },
-  subText: {}
+
+  adressSection: {
+    backgroundColor: "#EFEFEF",
+    flex: 1,
+    height: 400,
+    padding: 10
+  },
+  mapHeader: {
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  map: {
+    // ...StyleSheet.absoluteFillObject,
+    height: 270,
+    margin: 5,
+    // position: "relative"
+    position: "absolute",
+    top: 60,
+    bottom: 0,
+    left: 15,
+    right: 15
+  }
 });
 
 export default styles;

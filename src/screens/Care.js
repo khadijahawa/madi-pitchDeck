@@ -1,12 +1,11 @@
 import React from "react";
 import {
-  StyleSheet,
   Text,
   View,
-  Button,
   SafeAreaView,
   ScrollView,
-  Image
+  Image,
+  TouchableOpacity
 } from "react-native";
 import { useFonts } from "expo-font";
 import styles from "./Styles";
@@ -16,6 +15,7 @@ const Care = ({ navigation }) => {
     LexendBold: require("../../assets/fonts/Lexend-Bold.ttf"),
     LexendRegular: require("../../assets/fonts/Lexend-Regular.ttf"),
     LexendLight: require("../../assets/fonts/Lexend-Light.ttf"),
+    LexendSemiBold: require("../../assets/fonts/Lexend-SemiBold.ttf"),
     SoraBold: require("../../assets/fonts/Sora-Bold.ttf"),
     SoraLight: require("../../assets/fonts/Sora-Light.ttf")
   });
@@ -27,20 +27,13 @@ const Care = ({ navigation }) => {
   return (
     <SafeAreaView>
       <ScrollView>
-        <View
-          style={[
-            styles.container,
-            { paddingTop: 6, padding: 14, paddingVertical: "100%" }
-          ]}
-        >
+        <View style={[styles.container, { padding: 15 }]}>
           <View
             style={[
               styles.info,
               {
                 justifyContent: "space-around",
-                right: "5%",
-                // marginLeft: 1
-                paddingTop: 22
+                right: "8%"
               }
             ]}
           >
@@ -54,13 +47,12 @@ const Care = ({ navigation }) => {
                 {
                   fontFamily: "LexendSemiBold",
                   fontSize: 22,
-                  alignSelf: "center",
-                  lineHeight: 80
-                  // marginRight: 12
+                  lineHeight: 90,
+                  right: "25%"
                 }
               ]}
             >
-              Care{" "}
+              Care
             </Text>
           </View>
 
@@ -68,9 +60,8 @@ const Care = ({ navigation }) => {
             style={[
               styles.container,
               {
-                paddingTop: 6,
-                padding: 14,
-                paddingVertical: 32
+                flex: 1,
+                padding: 6
               }
             ]}
           >
@@ -173,7 +164,16 @@ const Care = ({ navigation }) => {
             >
               {"\n"} After each wear, lay out to air out. Wool sweaters should
               not be laundered often (appx. every 6-10 wears) to last longer.Use
-              a sweater comb to take off pilling. (edited){"\n"}
+              a sweater comb to take off pilling. (edited)
+            </Text>
+            <Text>
+              {"\n"}
+              {"\n"}
+              {"\n"}
+              {"\n"}
+              {"\n"}
+              {"\n"}
+              {"\n"}
             </Text>
           </View>
         </View>
