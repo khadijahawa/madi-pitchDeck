@@ -1,7 +1,6 @@
-import { useEffect, useState, useCallback } from "react";
+import React from "react";
 import { useFonts } from "expo-font";
 import MapView, { Marker } from "react-native-maps";
-import Geocoder from "react-native-geocoding";
 
 import {
   Text,
@@ -10,7 +9,6 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
-  StyleSheet,
   Linking
 } from "react-native";
 import styles from "./Styles";
@@ -104,7 +102,7 @@ const Repair = ({ navigation }) => {
             </Text>
           </View>
           <View style={styles.adressSection}>
-            <View style={styles.mapHeader}>
+            <View style={styles.info}>
               <View>
                 <Image
                   source={require("../../assets/pics/location.png")}

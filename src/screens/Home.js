@@ -72,7 +72,7 @@ const Home = ({ navigation }) => {
                 <View
                   style={[
                     styles.modalContent,
-                    { position: "absolute", top: "48%", left: "40%" }
+                    { position: "relative", top: "48%", left: "40%" }
                   ]}
                 >
                   <TouchableOpacity
@@ -92,7 +92,7 @@ const Home = ({ navigation }) => {
               Light Beige Turtleneck Sweater
             </Text>
             <Text style={[styles.Text, { fontFamily: "LexendRegular" }]}>
-              250 €
+              250 €{"\n"}
             </Text>
             <View style={styles.lineStyle} />
             <View style={styles.HomeButtonSection}>

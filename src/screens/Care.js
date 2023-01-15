@@ -47,7 +47,7 @@ const Care = ({ navigation }) => {
                 {
                   fontFamily: "LexendSemiBold",
                   fontSize: 22,
-                  lineHeight: 90,
+                  lineHeight: 80,
                   right: "25%"
                 }
               ]}
@@ -74,7 +74,7 @@ const Care = ({ navigation }) => {
                 }
               ]}
             >
-              {"\n"}How to take care of your garment{"\n"}
+              {"\n"}How To Take Care Of Your Garment{"\n"}
             </Text>
             <View style={styles.info}>
               <Image
@@ -172,6 +172,14 @@ const Care = ({ navigation }) => {
               {"\n"}
               {"\n"}
               {"\n"}
+              {"\n"}
+              {"\n"}
+              {"\n"}
+              {"\n"}
+              {"\n"}
+              {"\n"}
+              {"\n"}
+
               {"\n"}
               {"\n"}
             </Text>

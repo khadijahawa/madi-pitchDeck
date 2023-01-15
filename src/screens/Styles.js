@@ -62,8 +62,8 @@ const styles = StyleSheet.create({
     borderBottomColor: "black",
     borderBottomWidth: StyleSheet.hairlineWidth,
     alignSelf: "stretch",
-    width: "100%",
-    height: "8%",
+    // width: "100%",
+    // height: "8%",
     borderBottomWidth: 0.8
   },
   HomeButtonSection: {
@@ -90,10 +90,7 @@ const styles = StyleSheet.create({
     height: 400,
     padding: 10
   },
-  mapHeader: {
-    flexDirection: "row",
-    alignItems: "center"
-  },
+
   map: {
     // ...StyleSheet.absoluteFillObject,
     height: 270,

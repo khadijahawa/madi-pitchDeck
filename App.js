@@ -1,8 +1,8 @@
-import React from "react";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
-import { NavigationContainer, useScrollToTop } from "@react-navigation/native";
+import React, { useState, useEffect } from "react";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+// import QRCodeScanner from "react-native-qrcode-scanner";
+// import { BarCodeScanner } from "react-native-camera";
 
 import Home from "./src/screens/Home";
 import Care from "./src/screens/Care";
@@ -12,35 +12,34 @@ import OriginStory from "./src/screens/OriginStory";
 // import styles from "./src/screens/Styles";
 
 const Stack = createNativeStackNavigator();
-
 export default function App() {
+  // const navigation = useNavigation();
+  // const [scanned, setScanned] = useState(false);
+
+  // const handleBarCodeScanned = ({ type, data }) => {
+  //   setScanned(true);
+  //   if (data === "madi-pitch-deck") {
+  //     navigation.navigate("Home");
+  //   }
+  // };
   return (
-    <NavigationContainer styles={styles.container}>
+    // <BarCodeScanner
+    //   onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+    //   style={StyleSheet.absoluteFillObject}
+    // >
+    <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
           component={Home}
           options={{
-            // title: "Home",
-            // headerStyle: {
-            //   justifyContent: "center",
-            //   alignItems: "center",
-            //   alignSelf: "center"
-            // },
-            // headerTintColor: "#fff",
-            // headerTitleStyle: {
-            //   fontWeight: "bold",
-            //   alignSelf: "center",
-            //   justifyContent: "center",
-            //   alignItems: "center"
-            // },
             headerShown: false
           }}
         />
         <Stack.Screen
           name="Care"
           component={Care}
-          // options={{ headerShown: false }}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Repair"
@@ -59,12 +58,6 @@ export default function App() {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    // </BarCodeScanner>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "red"
-  }
-});
