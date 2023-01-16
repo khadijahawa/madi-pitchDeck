@@ -1,16 +1,13 @@
 import React from "react";
 import {
-  StyleSheet,
   Text,
   View,
-  Button,
   SafeAreaView,
   ScrollView,
   Image,
   TouchableOpacity
 } from "react-native";
 import { useFonts } from "expo-font";
-import { useNavigation } from "@react-navigation/native";
 
 import styles from "./Styles";
 
